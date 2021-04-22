@@ -1,4 +1,4 @@
-package com.maulanakurnia.agentvalorantv2.ui.agent
+package com.maulanakurnia.agentvalorantv2.adapter
 
 import android.app.Activity
 import android.content.Intent
@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.maulanakurnia.agentvalorantv2.R
 import com.maulanakurnia.agentvalorantv2.model.AgentModel
-import com.maulanakurnia.agentvalorantv2.ui.DetailAgentActivity
+import com.maulanakurnia.agentvalorantv2.activity.DetailAgentActivity
 import kotlinx.android.synthetic.main.item_list_agent.view.*
 
 class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.ViewHolder>() {
@@ -19,7 +19,7 @@ class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.Vi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_list_agent, parent, false)
+                                 .inflate(R.layout.item_list_agent, parent, false)
         return ViewHolder(view)
     }
 
@@ -31,15 +31,12 @@ class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.Vi
         holder.bind(listAgent[position])
     }
 
-    fun getData(): List<AgentModel> = listAgent
-
     fun setData(courseItems: List<AgentModel>) {
         listAgent.clear()
         listAgent.addAll(courseItems)
     }
 
     inner class ViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
-
         fun bind(agent: AgentModel) {
             with(view) {
 
@@ -60,7 +57,6 @@ class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.Vi
                     i.putExtra("SUMMARY_KEY", agent.summary)
                     activity.startActivity(i)
                 }
-
             }
         }
     }

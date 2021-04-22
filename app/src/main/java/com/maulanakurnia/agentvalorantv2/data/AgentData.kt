@@ -121,14 +121,4 @@ object AgentData {
 
         return agent
     }
-
-    fun getAgent(name: String): AgentModel? {
-        for (i in 0 until generateAgent().size) {
-            val agent = generateAgent()[i]
-            if (agent.name == name) {
-                return agent
-            }
-        }
-        return null
-    }
 }

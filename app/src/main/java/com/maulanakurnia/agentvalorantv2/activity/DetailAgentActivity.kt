@@ -1,4 +1,4 @@
-package com.maulanakurnia.agentvalorantv2.ui
+package com.maulanakurnia.agentvalorantv2.activity
 
 import android.net.Uri
 import android.os.Bundle

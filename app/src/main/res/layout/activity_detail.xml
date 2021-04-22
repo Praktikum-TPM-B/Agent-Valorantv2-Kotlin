@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants"
-    tools:context=".ui.DetailAgentActivity"
+    tools:context=".activity.DetailAgentActivity"
     tools:showIn="@layout/activity_detail"
     android:layout_marginTop="20dp">
 

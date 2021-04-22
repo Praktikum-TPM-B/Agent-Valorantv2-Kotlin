@@ -1,4 +1,4 @@
-package com.maulanakurnia.agentvalorantv2.ui
+package com.maulanakurnia.agentvalorantv2.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.maulanakurnia.agentvalorantv2.R
-import com.maulanakurnia.agentvalorantv2.ui.agent.AgentFragment
-import com.maulanakurnia.agentvalorantv2.ui.call.CallFragment
+import com.maulanakurnia.agentvalorantv2.databinding.ActivityMainBinding
+import com.maulanakurnia.agentvalorantv2.fragment.AgentFragment
+import com.maulanakurnia.agentvalorantv2.fragment.CallFragment
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     companion object {
         const val SELECTED_MENU = "selected_menu"
     }
@@ -20,7 +23,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupNavigation()
         setupSelectedMenu(savedInstanceState)
