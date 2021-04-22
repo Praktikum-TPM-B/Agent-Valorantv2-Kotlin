@@ -32,11 +32,9 @@ class AgentFragment: Fragment() {
         super.onActivityCreated(savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.title = "List Agent"
 
-        // Setup Adapter
         agentAdapter = AgentAdapter(requireActivity())
         agentAdapter.setData(getAgent())
 
-        // Setup List
         rvAgent.layoutManager = LinearLayoutManager(requireContext())
         rvAgent.setHasFixedSize(true)
         rvAgent.adapter = agentAdapter

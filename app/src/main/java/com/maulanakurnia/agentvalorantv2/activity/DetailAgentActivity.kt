@@ -10,10 +10,6 @@ import com.bumptech.glide.Glide
 import com.maulanakurnia.agentvalorantv2.R
 
 class DetailAgentActivity: AppCompatActivity() {
-    private lateinit var nameTxt: TextView
-    private lateinit var roleTxt:TextView
-    private lateinit var img: ImageView
-    private lateinit var summaryTxt: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +18,10 @@ class DetailAgentActivity: AppCompatActivity() {
         if (supportActionBar != null)
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        img         = findViewById(R.id.agent_image)
-        nameTxt     = findViewById(R.id.agent_name)
-        roleTxt     = findViewById(R.id.agent_role)
-        summaryTxt  = findViewById(R.id.agent_summary)
+        var img:ImageView         = findViewById(R.id.agent_image)
+        var nameTxt: TextView     = findViewById(R.id.agent_name)
+        var roleTxt: TextView     = findViewById(R.id.agent_role)
+        var summaryTxt: TextView  = findViewById(R.id.agent_summary)
 
         val i = this.intent
 

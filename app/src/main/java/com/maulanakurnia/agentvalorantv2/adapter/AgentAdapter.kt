@@ -18,9 +18,7 @@ class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.Vi
     private var listAgent = arrayListOf<AgentModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-                                 .inflate(R.layout.item_list_agent, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_list_agent, parent, false))
     }
 
     override fun getItemCount(): Int {

@@ -12,7 +12,6 @@ import com.maulanakurnia.agentvalorantv2.fragment.AgentFragment
 import com.maulanakurnia.agentvalorantv2.fragment.CallFragment
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
 
     companion object {
         const val SELECTED_MENU = "selected_menu"
@@ -23,14 +22,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        var binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupNavigation()
-        setupSelectedMenu(savedInstanceState)
-    }
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-    private fun setupSelectedMenu(savedInstanceState: Bundle?) {
         if (savedInstanceState != null) {
             savedInstanceState.getInt(SELECTED_MENU)
         } else {
@@ -41,10 +37,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(SELECTED_MENU, navView.selectedItemId)
-    }
-
-    private fun setupNavigation() {
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
     private val mOnNavigationItemSelectedListener =
