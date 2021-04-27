@@ -29,9 +29,9 @@ class AgentAdapter(val activity: Activity): RecyclerView.Adapter<AgentAdapter.Vi
         holder.bind(listAgent[position])
     }
 
-    fun setData(courseItems: List<AgentModel>) {
+    fun setData(item: List<AgentModel>) {
         listAgent.clear()
-        listAgent.addAll(courseItems)
+        listAgent.addAll(item)
     }
 
     inner class ViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
